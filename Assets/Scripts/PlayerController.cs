@@ -64,7 +64,7 @@ public class PlayerController : MonoBehaviour
         transform.Translate(inputMovement * playerSpeed * Time.deltaTime);
     }
 
-    //The alternative to Movement which is called while Boosting
+    //The alternative to Movement which is called while Boosting. Lasts a limited time.
     void Boost()
     {
         //Loops until boost timer runs out
@@ -80,13 +80,16 @@ public class PlayerController : MonoBehaviour
     Right now this will boost on any TriggerEnter,
     so if we want to use that for projectiles etc we will need to modify.
     */
-    void OnTriggerEnter2D(Collider2D booster)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        //Default boost settings. Direction is where booster points (local up).
-        boostDirection = booster.transform.up.normalized;
-        boostSpeed = 10f;
-        boostTimer = 0.2f;
-        isBoosting = true;
+        if(other.gameObject.tag == "Booster")
+        {
+            //Default boost settings. Direction is where booster points (local up).
+            boostDirection = other.transform.up.normalized;
+            boostSpeed = 10f;
+            boostTimer = 0.2f;
+            isBoosting = true;
+        }
     }
 
 }
