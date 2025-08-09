@@ -1,8 +1,6 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
-    public InputAction moveAction;
 
     public bool playerCanMove;
     public float playerSpeed;
@@ -12,8 +10,6 @@ public class PlayerController : MonoBehaviour
     private Vector3 boostDirection;
     private float boostSpeed;
     private float boostTimer;
-
-    [SerializeField] private InputActionReference Move;
 
     private Vector3 inputMovement;
 
@@ -40,8 +36,8 @@ public class PlayerController : MonoBehaviour
     void Movement()
     {
         //sets the inputMovement to whatever the player has input
-        inputMovement.x = Move.action.ReadValue<Vector2>().x;
-        inputMovement.y = Move.action.ReadValue<Vector2>().y;
+        inputMovement.x = Input.GetAxisRaw("Horizontal");
+        inputMovement.y = Input.GetAxisRaw("Vertical");
 
         //moves the player in the direction the player's input at [playerSpeed] units per second
         inputMovement.Normalize();

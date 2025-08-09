@@ -22,7 +22,7 @@ public class SoulHider : MonoBehaviour
     private void onOpen()
     {
         theSoul.SetActive(true);
-        theSoul.transform.position = new Vector3(0, 0.69f, 0);
+        theSoul.transform.position = new Vector3(-23, 0.69f, 0);
     }
 
     private void onClose()
