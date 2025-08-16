@@ -6,6 +6,7 @@ public class SoulHider : MonoBehaviour
     //and enable it when the box is open
     public GameObject theSoul;
 
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

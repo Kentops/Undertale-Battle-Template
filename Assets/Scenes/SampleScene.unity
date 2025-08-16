@@ -1576,6 +1576,9 @@ MonoBehaviour:
   - {fileID: 985683189}
   - {fileID: 1183415224}
   - {fileID: 1441171929}
+  selectSound: {fileID: 2704308522975525188, guid: 7a3c4e37ca5de0e47ab705e376bc5ee0, type: 3}
+  moveInMenuSound: {fileID: 0}
+  eventSystem: {fileID: 2127198777}
   state: 0
 --- !u!1 &985683189
 GameObject:
@@ -2871,7 +2874,7 @@ GameObject:
   - component: {fileID: 2127198778}
   m_Layer: 0
   m_Name: EventSystem
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2885,9 +2888,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2127198777}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
+  m_Script: {fileID: 11500000, guid: 6a92fc167e8eeaf49b061c9fb59acd23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  theSoul: {fileID: 0}
 --- !u!114 &2127198779
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -39,24 +39,45 @@ public class PlayerController : MonoBehaviour
         inputMovement.x = Input.GetAxisRaw("Horizontal");
         inputMovement.y = Input.GetAxisRaw("Vertical");
 
+        //forces inputMovement values to be either one or 0
+        if(Mathf.Abs(inputMovement.x)>.3){inputMovement.x = Mathf.Sign(inputMovement.x);} else inputMovement.x = 0;
+        if(Mathf.Abs(inputMovement.y)>.3){ inputMovement.y = Mathf.Sign(inputMovement.y);} else inputMovement.y = 0;
+
         //moves the player in the direction the player's input at [playerSpeed] units per second
+        if(inputMovement.x == 0 && inputMovement.y == 0) return;
+        if(inputMovement.x == 0 || inputMovement.y == 0)
+            {
+                RaycastHit2D rayCheck = Physics2D.Raycast(transform.position, transform.TransformDirection(inputMovement), 0.22f);
+                if(rayCheck)
+                {
+                    if (rayCheck.transform.gameObject.layer == LayerMask.NameToLayer("Horizontal Wall"))
+                    {
+                        inputMovement.y = 0;
+                    }
+                    if (rayCheck.transform.gameObject.layer == LayerMask.NameToLayer("Vertical Wall"))
+                    {
+                        inputMovement.x = 0;
+                    }
+                }
+            } else
+            {
+                RaycastHit2D[] rayChecks = Physics2D.RaycastAll(transform.position, transform.TransformDirection(inputMovement), 0.3111f);
+                foreach(RaycastHit2D rayCheck in rayChecks)
+                    if(rayCheck)
+                    {
+                        if (rayCheck.transform.gameObject.layer == LayerMask.NameToLayer("Horizontal Wall"))
+                        {
+                            inputMovement.y = 0;
+                        }
+                        if (rayCheck.transform.gameObject.layer == LayerMask.NameToLayer("Vertical Wall"))
+                        {
+                            inputMovement.x = 0;
+                        }
+                    }
+
+            }
+
         inputMovement.Normalize();
-
-        RaycastHit2D rayCheck = Physics2D.Raycast(transform.position, transform.TransformDirection(inputMovement), 0.33f);
-        if (rayCheck)
-        {
-            if (rayCheck.transform.gameObject.layer == LayerMask.NameToLayer("Horizontal Wall"))
-            {
-                inputMovement.y = 0;
-            }
-            if (rayCheck.transform.gameObject.layer == LayerMask.NameToLayer("Vertical Wall"))
-            {
-                inputMovement.x = 0;
-            }
-            inputMovement.Normalize();
-        }
-
-
         transform.Translate(inputMovement * playerSpeed * Time.deltaTime);
     }
 

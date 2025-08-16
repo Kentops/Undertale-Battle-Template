@@ -5,6 +5,10 @@ public class KrisMenu : MonoBehaviour
 {
     [SerializeField] private Vector3[] positions; //0 = down, 1 = up
     [SerializeField] private GameObject[] highlights;
+    
+    public GameObject selectSound;
+    public GameObject moveInMenuSound;
+    public GameObject eventSystem;
 
     private int selectedOption = 0;
 
@@ -26,9 +30,18 @@ public class KrisMenu : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             changeState();
+            
+            /*temp for debug*/ if (eventSystem.GetComponent<BattleBox>().myState==0) eventSystem.GetComponent<BattleBox>().updateBoxState(1);
         }
 
         if (state == 0) { return; }
+
+        if (selectedOption == 0 && (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Return)) )
+        {
+            changeState();
+            Instantiate(selectSound);
+            /*temp for debug*/ eventSystem.GetComponent<BattleBox>().updateBoxState(1);
+        }
 
         if(Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
         {
