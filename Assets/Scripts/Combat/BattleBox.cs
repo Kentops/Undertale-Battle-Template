@@ -20,16 +20,12 @@ public class BattleBox : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //For testing
-        if (debugState != myState)
-        {
-            updateBoxState(debugState);
-        }
 
     }
 
     public void updateBoxState(int newState)
     {
+        Debug.Log("updatingBoxState to "+newState);
         myAnim.SetInteger("State", newState);
         myState = newState;
 

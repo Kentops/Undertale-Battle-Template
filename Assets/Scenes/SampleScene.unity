@@ -573,6 +573,7 @@ Transform:
   m_Children:
   - {fileID: 2127198780}
   - {fileID: 491807644}
+  - {fileID: 1778121315}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &501681473
@@ -1578,7 +1579,7 @@ MonoBehaviour:
   - {fileID: 1441171929}
   selectSound: {fileID: 2704308522975525188, guid: 7a3c4e37ca5de0e47ab705e376bc5ee0, type: 3}
   moveInMenuSound: {fileID: 0}
-  eventSystem: {fileID: 2127198777}
+  battleBox: {fileID: 1085816955}
   state: 0
 --- !u!1 &985683189
 GameObject:
@@ -2727,6 +2728,54 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1778121314
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1778121315}
+  - component: {fileID: 1778121316}
+  m_Layer: 0
+  m_Name: BulletManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1778121315
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778121314}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -796.5441, y: -303.17038, z: -3.0675907}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 501681472}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1778121316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778121314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c961c5426fb18824eb97d0dbee24775d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Attacks:
+  - {fileID: 7997485524859598547, guid: 9a2b6a8675286fe4facd1fc9d402dc3e, type: 3}
+  - {fileID: 7997485524859598547, guid: bfd642a9d61adec44b317e02ff497bbd, type: 3}
+  nextAttack: 0
 --- !u!1 &2078050711
 GameObject:
   m_ObjectHideFlags: 0
@@ -2891,7 +2940,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a92fc167e8eeaf49b061c9fb59acd23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  theSoul: {fileID: 0}
+  theSoul: {fileID: 1557205898}
 --- !u!114 &2127198779
 MonoBehaviour:
   m_ObjectHideFlags: 0

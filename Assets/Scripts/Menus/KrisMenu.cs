@@ -8,7 +8,7 @@ public class KrisMenu : MonoBehaviour
     
     public GameObject selectSound;
     public GameObject moveInMenuSound;
-    public GameObject eventSystem;
+    public GameObject battleBox;
 
     private int selectedOption = 0;
 
@@ -31,7 +31,9 @@ public class KrisMenu : MonoBehaviour
         {
             changeState();
             
-            /*temp for debug*/ if (eventSystem.GetComponent<BattleBox>().myState==0) eventSystem.GetComponent<BattleBox>().updateBoxState(1);
+            /*temp for debug*/ if (battleBox.GetComponent<BattleBox>().myState==0) 
+            {battleBox.GetComponent<BattleBox>().updateBoxState(1);}
+            else battleBox.GetComponent<BattleBox>().updateBoxState(0);
         }
 
         if (state == 0) { return; }
@@ -40,7 +42,7 @@ public class KrisMenu : MonoBehaviour
         {
             changeState();
             Instantiate(selectSound);
-            /*temp for debug*/ eventSystem.GetComponent<BattleBox>().updateBoxState(1);
+            /*temp for debug*/ battleBox.GetComponent<BattleBox>().updateBoxState(1);
         }
 
         if(Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
