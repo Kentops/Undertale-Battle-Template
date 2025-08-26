@@ -7,11 +7,10 @@ public class BulletWave : MonoBehaviour
     public float[] timeWaitedBeforeBulletSpawns;
     public GameObject[] bullets;
     public Vector3[] bulletSpawnLocations;
+    public float timeAfterLastBullet; //How long until the next wave is spawned? If last wave, how long until combat ends?
 
-    private GameObject attackThisWaveBelongsToo;
+    private Attack attackThisWaveBelongsTo;
     private int bulletIndex;
-
-    private IEnumerator waveCoroutine;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -25,13 +24,12 @@ public class BulletWave : MonoBehaviour
         
     }
 
-    public void StartSpawningBullets(GameObject attack) 
+    public void StartSpawningBullets(Attack myAttack) 
     {
         Debug.Log("Start Spawning Bullets Method");
         bulletIndex = 0;
-        waveCoroutine = bulletSpawner();
-        attackThisWaveBelongsToo = attack;
-        StartCoroutine(waveCoroutine);
+        attackThisWaveBelongsTo = myAttack;
+        StartCoroutine("bulletSpawner");
     }
 
     private IEnumerator bulletSpawner()
@@ -40,12 +38,13 @@ public class BulletWave : MonoBehaviour
         while (bulletIndex < bullets.Length)
         {
         yield return new WaitForSeconds(timeWaitedBeforeBulletSpawns[bulletIndex]);
-        Instantiate(bullets[bulletIndex], bulletSpawnLocations[bulletIndex], gameObject.transform.rotation);
-        Debug.Log("bullet instantiated?");
+        GameObject newBullet = Instantiate(bullets[bulletIndex], bulletSpawnLocations[bulletIndex], gameObject.transform.rotation);
+        newBullet.transform.parent = transform;
         bulletIndex++;
         }
-        
-        attackThisWaveBelongsToo.GetComponent<Attack>().SpawnNextWave();
+
+        yield return new WaitForSeconds(timeAfterLastBullet); 
+        attackThisWaveBelongsTo.SpawnNextWave();
     }
 
 

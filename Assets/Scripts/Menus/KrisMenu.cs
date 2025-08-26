@@ -8,11 +8,11 @@ public class KrisMenu : MonoBehaviour
     
     public GameObject selectSound;
     public GameObject moveInMenuSound;
-    public GameObject battleBox;
+
+    public static KrisMenu I;
 
     private int selectedOption = 0;
-
-    public int state = 0;
+    private int state = 0;
     
     public void changeState()
     {
@@ -22,27 +22,23 @@ public class KrisMenu : MonoBehaviour
 
     private void Start()
     {
+        I = this;
         changeState(); //Pop up on start
     }
     private void Update()
     {
-        //Debug
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            changeState();
-            
-            /*temp for debug*/ if (battleBox.GetComponent<BattleBox>().myState==0) 
-            {battleBox.GetComponent<BattleBox>().updateBoxState(1);}
-            else battleBox.GetComponent<BattleBox>().updateBoxState(0);
-        }
-
         if (state == 0) { return; }
 
-        if (selectedOption == 0 && (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Return)) )
+        if (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Return))
         {
-            changeState();
-            Instantiate(selectSound);
-            /*temp for debug*/ battleBox.GetComponent<BattleBox>().updateBoxState(1);
+            //Fight Button
+            if(selectedOption == 0)
+            {
+                changeState();
+                Instantiate(selectSound);
+                /*temp for debug*/
+                BattleBox.I.updateBoxState(1);
+            }
         }
 
         if(Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
