@@ -1,5 +1,7 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class KrisMenu : MonoBehaviour 
 {
@@ -93,4 +95,17 @@ public class KrisMenu : MonoBehaviour
             highlights[selectedOption].SetActive(true);
         }
     }
+
+    #region Kris Health UI
+    [SerializeField] private TextMeshProUGUI healthText;
+    [SerializeField] private TextMeshProUGUI maxHealthText;
+    [SerializeField] private Image damageBar;
+
+    public void updateHealth()
+    {
+        //Updates the text and healthbar
+        healthText.text = "" + KrisHealth.I.health;
+        damageBar.fillAmount = 1 - ((float)KrisHealth.I.health / (float)KrisHealth.I.maxHealth);
+    }
+    #endregion
 }

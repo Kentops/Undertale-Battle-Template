@@ -2,23 +2,16 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    //public enum ColliderType {Box, Circle, Polygon}
-    //public ColliderType colliderType;
-    private Collider2D bulletCollider;
-    
     public int bulletDamage;
-    public int minBulletDamage;
+    public bool destoryOnContact; //Destroy bullet on contact with player
 
-    public float bulletLifespan;
-    public bool bulletHasLifespan;
+    [SerializeField] private float bulletLifespan;
+    [SerializeField] private bool bulletHasLifespan;
+    
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        //if(colliderType == ColliderType.Box) bulletCollider = gameObject.GetComponent<Collider2D>();
-        //if(colliderType == ColliderType.Circle) bulletCollider = gameObject.GetComponent<CircleCollider2D>();
-        //if(colliderType == ColliderType.Polygon) bulletCollider = gameObject.GetComponent<PolygonCollider2D>();
-
-        bulletCollider = gameObject.GetComponent<Collider2D>(); //Bullet can have any 2D collider
 
     }
 
@@ -34,8 +27,9 @@ public class Bullet : MonoBehaviour
 
     }
 
-    void EndBulletLife()
+    public void EndBulletLife()
     {
         Destroy(gameObject);
     }
+
 }
