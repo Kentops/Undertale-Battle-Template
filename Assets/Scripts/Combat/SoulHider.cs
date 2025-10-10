@@ -8,10 +8,11 @@ public class SoulHider : MonoBehaviour
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Awake()
     {
         BattleBox.boxOpen += onOpen;
         BattleBox.boxClose += onClose;
+        
     }
 
     // Update is called once per frame
@@ -29,5 +30,11 @@ public class SoulHider : MonoBehaviour
     private void onClose()
     {
         theSoul.SetActive(false);
+    }
+
+    private void OnDestroy()
+    {
+        BattleBox.boxOpen -= onOpen;
+        BattleBox.boxClose -= onClose;
     }
 }

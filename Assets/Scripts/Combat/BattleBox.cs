@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BattleBox : MonoBehaviour
 {
@@ -20,7 +21,7 @@ public class BattleBox : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     public void updateBoxState(int newState)
@@ -39,6 +40,14 @@ public class BattleBox : MonoBehaviour
             if(boxOpen == null) { return; }
             boxOpen();
         }
+    }
+    private void OnDestroy()
+    {
+        I = null;
+    }
+    private void OnEnable()
+    {
+        I = this;
     }
 
 

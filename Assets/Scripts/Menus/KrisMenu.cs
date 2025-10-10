@@ -7,6 +7,7 @@ public class KrisMenu : MonoBehaviour
 {
     [SerializeField] private Vector3[] positions; //0 = down, 1 = up
     [SerializeField] private GameObject[] highlights;
+    [SerializeField] private RectTransform krisUIRect;
     
     public GameObject selectSound;
     public GameObject moveInMenuSound;
@@ -85,7 +86,7 @@ public class KrisMenu : MonoBehaviour
 
         while (transform.localPosition != positions[state])
         {
-            GetComponent<RectTransform>().localPosition = Vector3.MoveTowards(GetComponent<RectTransform>().localPosition, positions[state], 200 * Time.deltaTime);
+            krisUIRect.localPosition = Vector3.MoveTowards(krisUIRect.localPosition, positions[state], 200 * Time.deltaTime);
             yield return null;
         }
 

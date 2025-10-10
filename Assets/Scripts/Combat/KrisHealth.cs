@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class KrisHealth : MonoBehaviour
 {
@@ -8,15 +9,15 @@ public class KrisHealth : MonoBehaviour
     public int maxHealth;
     public bool isInvincible; //Are you sure?
 
-    private SpriteRenderer myRenderer;
+    [SerializeField] private SpriteRenderer myRenderer;
     [SerializeField] private Sprite heart;
+    [SerializeField] private AudioSource hurtSound;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         I = this;
         health = maxHealth;
-        myRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -30,6 +31,12 @@ public class KrisHealth : MonoBehaviour
         isInvincible = true;
         health -= damage;
         KrisMenu.I.updateHealth();
+        hurtSound.Play();
+        if(health <= 0)
+        {
+            SceneManager.LoadScene("Game Over Scene");
+        }
+
 
         for (int i = 0; i < 2; i++) //Flicker heart
         {
@@ -63,5 +70,6 @@ public class KrisHealth : MonoBehaviour
     private void OnDisable()
     {
         isInvincible = false;
+        myRenderer.sprite = heart;
     }
 }

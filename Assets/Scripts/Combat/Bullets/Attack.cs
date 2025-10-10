@@ -10,10 +10,7 @@ public class Attack : MonoBehaviour
 
     public void SpawnNextWave() 
     {
-        Debug.Log("SpawnNextWave method");
-        Debug.Log(activeWave);
         activeWave++;
-        Debug.Log(name);
         if (activeWave < waves.Length)
         {
             currentWave = Instantiate(waves[activeWave], transform);

@@ -28,4 +28,9 @@ public class BulletManager : MonoBehaviour
         myAttack.GetComponent<Attack>().SpawnNextWave();
         nextAttack++;
     }
+
+    private void OnDestroy()
+    {
+        BattleBox.boxOpen -= BeginNextAttack;
+    }
 }
