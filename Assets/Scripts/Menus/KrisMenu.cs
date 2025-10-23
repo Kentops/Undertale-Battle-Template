@@ -1,5 +1,6 @@
 using System.Collections;
 using TMPro;
+using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -37,10 +38,8 @@ public class KrisMenu : MonoBehaviour
             //Fight Button
             if(selectedOption == 0)
             {
-                changeState();
                 Instantiate(selectSound);
-                /*temp for debug*/
-                BattleBox.I.updateBoxState(1);
+                displayText("You swipe at sans", true);
             }
         }
 
@@ -98,6 +97,7 @@ public class KrisMenu : MonoBehaviour
     }
 
     #region Kris Health UI
+    [Header("Kris Health")]
     [SerializeField] private TextMeshProUGUI healthText;
     [SerializeField] private TextMeshProUGUI maxHealthText;
     [SerializeField] private Image damageBar;
@@ -108,5 +108,51 @@ public class KrisMenu : MonoBehaviour
         healthText.text = "" + KrisHealth.I.health;
         damageBar.fillAmount = 1 - ((float)KrisHealth.I.health / (float)KrisHealth.I.maxHealth);
     }
+    #endregion
+
+    #region Message Text
+    [Header("Textbox")]
+    [SerializeField] private TextMeshProUGUI boxText;
+
+    
+
+    //Shortcut function for displaying text;
+    public void displayText(string inputStr, bool startBattle)
+    {
+        StartCoroutine("displayTextCoroutine", new textInput(inputStr, startBattle));
+    }
+
+    //Struct to allow for multiple parameters in the coroutine
+    public struct textInput
+    {
+        public textInput(string inputStr, bool startBattle)
+        {
+            inputString = inputStr;
+            changeToBattle = startBattle;
+        }
+
+        public string inputString;
+        public bool changeToBattle;
+    }
+
+    //Displays text one character at a time
+    public IEnumerator displayTextCoroutine(textInput myInput)
+    {
+        for(int i = 0; i < myInput.inputString.Length; i++)
+        {
+            boxText.text = myInput.inputString.Substring(0, i + 1);
+            yield return new WaitForSeconds(0.05f);
+        }
+
+        //Are we switching to the battle box?
+        if(myInput.changeToBattle == true)
+        {
+            changeState(); //Hides UI
+            yield return new WaitForSeconds(2);
+            BattleBox.I.updateBoxState(1); //Starts battle
+            boxText.text = "";
+        }
+    }
+
     #endregion
 }
