@@ -10,8 +10,8 @@ public class KrisMenu : MonoBehaviour
     [SerializeField] private GameObject[] highlights;
     [SerializeField] private RectTransform krisUIRect;
     
-    public GameObject selectSound;
-    public GameObject moveInMenuSound;
+    public AudioSource selectSound;
+    public AudioSource moveInMenuSound;
 
     public static KrisMenu I;
 
@@ -33,26 +33,51 @@ public class KrisMenu : MonoBehaviour
     {
         if (state == 0) { return; }
 
-        if (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Return))
+        if ((Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Return)) && menuOptionsActive == false)
         {
+            //Oh gosh this is such an unoptimal way to do this, this is due in a few days aaaaaaaaaaaa
+            //Kris Menu
             //Fight Button
+            StopCoroutine("displayTextCoroutine");
             if(selectedOption == 0)
             {
-                Instantiate(selectSound);
-                displayText("You swipe at sans", true);
+                selectSound.Play();
+                StartCoroutine("attackMenu");
             }
         }
 
-        if(Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.S) ||
+            Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.DownArrow)) 
         {
-            selectedOption = (selectedOption + 1) % 5;
-            changeSelected();
+            if(menuOptionsActive == false)
+            {
+                //Options in the kris UI
+                selectedOption = (selectedOption + 1) % 5;
+                changeSelected();
+            }
+            else
+            {
+                //Options in the big text box
+                menuOption = (menuOption + 1) & totalMenuOptions;
+                changeBoxMenuSelected();
+            }
+            
         }
-        else if(Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
+        else if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.W) ||
+            Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.UpArrow))
         {
-            //The ternary (?) operator -> condition ? return_if_true : return_if_false
-            selectedOption = selectedOption == 0 ? 4 : selectedOption - 1; //Unity doesn't treat negative moodulus like I was taught
-            changeSelected();
+            if(menuOptionsActive == false)
+            {
+                //The ternary operator (?) -> condition ? return_if_true : return_if_false
+                selectedOption = selectedOption == 0 ? 4 : selectedOption - 1; //Unity doesn't treat negative moodulus like I was taught
+                changeSelected();
+            }
+            else
+            {
+                menuOption = menuOption == 0 ? totalMenuOptions - 1 : menuOption - 1;
+                changeBoxMenuSelected();
+            }
+           
         }
     }
 
@@ -151,6 +176,60 @@ public class KrisMenu : MonoBehaviour
             yield return new WaitForSeconds(2);
             BattleBox.I.updateBoxState(1); //Starts battle
             boxText.text = "";
+        }
+    }
+
+    #endregion
+
+    #region Menu Choices
+    [Header("Textbox menu items")]
+    private int menuOption = 0;
+    private int totalMenuOptions = 0;
+    private bool menuOptionsActive = false;
+
+    [SerializeField] private FillBar enemyHealth;
+    [SerializeField] private FillBar mercy;
+    [SerializeField] private GameObject selectedIcon;
+
+    [SerializeField] private GameObject[] options;
+    [SerializeField] private Vector3[] heartPositions;
+
+    private void changeBoxMenuSelected()
+    {
+        selectedIcon.SetActive(true);
+        selectedIcon.transform.localPosition = heartPositions[menuOption];
+    }
+    private IEnumerator attackMenu()
+    {
+        //Initialize menu options
+        totalMenuOptions = 1;
+        menuOption = 0;
+        menuOptionsActive = true;
+
+        boxText.text = "";
+        options[0].SetActive(true);
+        options[0].GetComponent<TextMeshProUGUI>().text = "Sans";
+        enemyHealth.gameObject.SetActive(true);
+        enemyHealth.updateProgress(90);
+        changeBoxMenuSelected();
+
+        bool keepGoing = true;
+        yield return new WaitForSeconds(0.1f);
+        while (keepGoing)
+        {
+            if(Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Return))
+            {
+                if(menuOption == 0)
+                {
+                    keepGoing = false;
+                    enemyHealth.gameObject.SetActive(false);
+                    menuOptionsActive = false;
+                    options[0].SetActive(false);
+                    selectedIcon.SetActive(false);
+                    displayText("You swipe at sans", true);
+                }
+            }
+            yield return null;
         }
     }
 

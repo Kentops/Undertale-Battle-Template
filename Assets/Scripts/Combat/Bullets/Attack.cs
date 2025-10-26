@@ -24,9 +24,14 @@ public class Attack : MonoBehaviour
     {
         Destroy(currentWave);
 
-        //Little delay
+
         BattleBox.I.updateBoxState(0);
-        yield return new WaitForSeconds(1);
+        //Send the next message
+        KrisMenu.I.displayText(BattleLines.I.lines[BattleLines.I.currentMessage], false);
+        BattleLines.I.currentMessage = (BattleLines.I.currentMessage + 1) % BattleLines.I.lines.Length;
+
+        //Little delay
+        yield return new WaitForSeconds(2);
         KrisMenu.I.changeState();
         Destroy(this.gameObject);
     }
