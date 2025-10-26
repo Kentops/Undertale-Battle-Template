@@ -10,7 +10,6 @@ public class FillBar : MonoBehaviour
     public void updateProgress(int percent)
     {
         bar.fillAmount = 1 - ((float)percent / 100);
-        Debug.Log(1 - ((float)percent / 100));
         percentText.text = percent + "%";
     }
 }

@@ -21,9 +21,4 @@ public class KrisController : MonoBehaviour
     {
         myAnim = GetComponent<Animator>();
     }
-
-    void Update()
-    {
-       
-    }
 }

@@ -24,7 +24,7 @@ public class KrisMenu : MonoBehaviour
         StartCoroutine("moveUI");
     }
 
-    private void Start()
+    private void Awake()
     {
         I = this;
         changeState(); //Pop up on start
@@ -144,7 +144,13 @@ public class KrisMenu : MonoBehaviour
     //Shortcut function for displaying text;
     public void displayText(string inputStr, bool startBattle)
     {
-        StartCoroutine("displayTextCoroutine", new textInput(inputStr, startBattle));
+        StartCoroutine("displayTextCoroutine", new textInput("* " + inputStr, startBattle));
+    }
+
+    public void displayPreviousText()
+    {
+        //Yoink the previous message   
+        boxText.text = "* " + BattleLines.I.lines[(BattleLines.I.currentMessage - 1) == -1 ? BattleLines.I.lines.Length-1 : BattleLines.I.currentMessage - 1];
     }
 
     //Struct to allow for multiple parameters in the coroutine
@@ -186,13 +192,18 @@ public class KrisMenu : MonoBehaviour
     private int menuOption = 0;
     private int totalMenuOptions = 0;
     private bool menuOptionsActive = false;
+    [SerializeField] private GameObject[] options;
+    [SerializeField] private GameObject selectedIcon;
+    [SerializeField] private Vector3[] heartPositions;
+    [SerializeField] private KrisController krisAnim;
+    [SerializeField] private EnemyManager enemy;
 
+    [Header("Option Specifics")]
     [SerializeField] private FillBar enemyHealth;
     [SerializeField] private FillBar mercy;
-    [SerializeField] private GameObject selectedIcon;
+    [SerializeField] private GameObject slash;
 
-    [SerializeField] private GameObject[] options;
-    [SerializeField] private Vector3[] heartPositions;
+
 
     private void changeBoxMenuSelected()
     {
@@ -210,7 +221,9 @@ public class KrisMenu : MonoBehaviour
         options[0].SetActive(true);
         options[0].GetComponent<TextMeshProUGUI>().text = "Sans";
         enemyHealth.gameObject.SetActive(true);
-        enemyHealth.updateProgress(90);
+        enemyHealth.updateProgress((int)((float)enemy.health / (float)enemy.maxHealth * 100));
+        mercy.gameObject.SetActive(true);
+        mercy.updateProgress(enemy.mercy);
         changeBoxMenuSelected();
 
         bool keepGoing = true;
@@ -222,12 +235,34 @@ public class KrisMenu : MonoBehaviour
                 if(menuOption == 0)
                 {
                     keepGoing = false;
-                    enemyHealth.gameObject.SetActive(false);
                     menuOptionsActive = false;
+
+                    enemyHealth.gameObject.SetActive(false);
+                    mercy.gameObject.SetActive(false);
                     options[0].SetActive(false);
                     selectedIcon.SetActive(false);
-                    displayText("You swipe at sans", true);
+
+                    //Fight
+                    changeState();
+                    krisAnim.state = 2;
+                    yield return new WaitForSeconds(0.4f);
+                    Instantiate(slash, enemy.transform.position, Quaternion.identity); //Throw the slash onto the enemy
+                    enemy.health -= 8; //Damage the enemy
+                    BattleBox.I.updateBoxState(1);
+                    krisAnim.state = 1;
                 }
+            }
+            if(Input.GetKeyDown(KeyCode.X) || Input.GetKeyDown(KeyCode.Backspace))
+            {
+                //return to menu
+                keepGoing = false;
+                menuOptionsActive = false;
+                enemyHealth.gameObject.SetActive(false);
+                mercy.gameObject.SetActive(false);
+                options[0].SetActive(false);
+                selectedIcon.SetActive(false);
+
+                displayPreviousText();
             }
             yield return null;
         }

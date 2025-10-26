@@ -11,4 +11,9 @@ public class BattleLines : MonoBehaviour
     {
         I = this;   
     }
+    private void Start()
+    {
+        KrisMenu.I.displayText(lines[0], false);
+        currentMessage++;
+    }
 }
