@@ -45,9 +45,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeWaitedBeforeBulletSpawns:
-  - 1
-  - 1
-  - 1
+  - 0.2
+  - 0.2
+  - 0.2
   bullets:
   - {fileID: 7995796594343809552, guid: b6fca38702ecbca4e868b1c4ee2e724d, type: 3}
   - {fileID: 7995796594343809552, guid: b6fca38702ecbca4e868b1c4ee2e724d, type: 3}

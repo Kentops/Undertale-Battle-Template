@@ -11,6 +11,8 @@ public class KrisMenu : MonoBehaviour
     [SerializeField] private RectTransform krisUIRect;
     
     public AudioSource selectSound;
+    public AudioSource damageEnemySound;
+    public AudioSource attackSound;
     public AudioSource moveInMenuSound;
 
     public static KrisMenu I;
@@ -246,6 +248,8 @@ public class KrisMenu : MonoBehaviour
                     enemy.health -= 8; //Damage the enemy
                     BattleBox.I.updateBoxState(1);
                     krisAnim.state = 1;
+                    StartCoroutine(playDelayedSound(.05f, attackSound));
+                    StartCoroutine(playDelayedSound(.25f, damageEnemySound));
                 }
             }
             if(Input.GetKeyDown(KeyCode.X) || Input.GetKeyDown(KeyCode.Backspace))
@@ -257,12 +261,19 @@ public class KrisMenu : MonoBehaviour
                 mercy.gameObject.SetActive(false);
                 options[0].SetActive(false);
                 selectedIcon.SetActive(false);
+                selectSound.Play();
 
                 displayPreviousText();
             }
             yield return null;
         }
     }
-
+    //for playing sounds such as the damage sound after a certain amount of time
+    private IEnumerator playDelayedSound(float waitTime, AudioSource sound)
+    {
+        yield return new WaitForSeconds(waitTime);
+        sound.Play();
+        yield return null;
+    }
     #endregion
 }
