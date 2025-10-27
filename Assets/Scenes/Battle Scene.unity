@@ -3915,7 +3915,7 @@ GameObject:
   - component: {fileID: 1798075049}
   - component: {fileID: 1798075048}
   m_Layer: 5
-  m_Name: AttackOption1
+  m_Name: Enemy Name Option
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

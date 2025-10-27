@@ -58,7 +58,7 @@ public class KrisMenu : MonoBehaviour
             else
             {
                 //Options in the big text box
-                menuOption = (menuOption + 1) & totalMenuOptions;
+                menuOption = (menuOption + 1) % totalMenuOptions;
                 changeBoxMenuSelected();
             }
             
@@ -220,9 +220,7 @@ public class KrisMenu : MonoBehaviour
         boxText.text = "";
         options[0].SetActive(true);
         options[0].GetComponent<TextMeshProUGUI>().text = "Sans";
-        enemyHealth.gameObject.SetActive(true);
-        enemyHealth.updateProgress((int)((float)enemy.health / (float)enemy.maxHealth * 100));
-        mercy.gameObject.SetActive(true);
+        enemyHealth.updateProgress((int)((float)enemy.health / enemy.maxHealth * 100));
         mercy.updateProgress(enemy.mercy);
         changeBoxMenuSelected();
 
@@ -237,8 +235,6 @@ public class KrisMenu : MonoBehaviour
                     keepGoing = false;
                     menuOptionsActive = false;
 
-                    enemyHealth.gameObject.SetActive(false);
-                    mercy.gameObject.SetActive(false);
                     options[0].SetActive(false);
                     selectedIcon.SetActive(false);
 
