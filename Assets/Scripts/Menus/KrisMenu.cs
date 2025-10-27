@@ -2,6 +2,7 @@ using System.Collections;
 using TMPro;
 using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class KrisMenu : MonoBehaviour 
@@ -39,12 +40,25 @@ public class KrisMenu : MonoBehaviour
         {
             //Oh gosh this is such an unoptimal way to do this, this is due in a few days aaaaaaaaaaaa
             //Kris Menu
-            //Fight Button
             StopCoroutine("displayTextCoroutine");
-            if(selectedOption == 0)
+            selectSound.Play();
+            //Fight Button
+            if (selectedOption == 0)
             {
-                selectSound.Play();
                 StartCoroutine("attackMenu");
+            }
+            else if(selectedOption == 1)
+            {
+                StartCoroutine(actMenu());
+            }
+            //Mercy button
+            else if(selectedOption == 3)
+            {
+                StartCoroutine(spareMenu());
+            }
+            else
+            {
+                displayText("I didn't implement this :(", false);
             }
         }
 
@@ -156,7 +170,7 @@ public class KrisMenu : MonoBehaviour
     }
 
     //Struct to allow for multiple parameters in the coroutine
-    public struct textInput
+    private struct textInput
     {
         public textInput(string inputStr, bool startBattle)
         {
@@ -169,8 +183,10 @@ public class KrisMenu : MonoBehaviour
     }
 
     //Displays text one character at a time
-    public IEnumerator displayTextCoroutine(textInput myInput)
+    private IEnumerator displayTextCoroutine(textInput myInput)
     {
+        if (myInput.changeToBattle) { changeState(); } //Hide UI 
+
         for(int i = 0; i < myInput.inputString.Length; i++)
         {
             boxText.text = myInput.inputString.Substring(0, i + 1);
@@ -180,7 +196,6 @@ public class KrisMenu : MonoBehaviour
         //Are we switching to the battle box?
         if(myInput.changeToBattle == true)
         {
-            changeState(); //Hides UI
             yield return new WaitForSeconds(2);
             BattleBox.I.updateBoxState(1); //Starts battle
             boxText.text = "";
@@ -199,11 +214,15 @@ public class KrisMenu : MonoBehaviour
     [SerializeField] private Vector3[] heartPositions;
     [SerializeField] private KrisController krisAnim;
     [SerializeField] private EnemyManager enemy;
+    [SerializeField] private AudioSource musicPlayer;
 
     [Header("Option Specifics")]
     [SerializeField] private FillBar enemyHealth;
     [SerializeField] private FillBar mercy;
     [SerializeField] private GameObject slash;
+    [SerializeField] private string[] actOptionNames;
+    [SerializeField] private GameObject actDescriptionText;
+    [SerializeField] private string[] actDescritons;
 
 
 
@@ -221,7 +240,9 @@ public class KrisMenu : MonoBehaviour
 
         boxText.text = "";
         options[0].SetActive(true);
-        options[0].GetComponent<TextMeshProUGUI>().text = "Sans";
+        selectedIcon.SetActive(true);
+        //Updating values
+        if (enemy.mercy >= 100) { options[0].GetComponent<TextMeshProUGUI>().color = Color.yellow; }
         enemyHealth.updateProgress((int)((float)enemy.health / enemy.maxHealth * 100));
         mercy.updateProgress(enemy.mercy);
         changeBoxMenuSelected();
@@ -235,7 +256,8 @@ public class KrisMenu : MonoBehaviour
                 if(menuOption == 0)
                 {
                     keepGoing = false;
-                    menuOptionsActive = false;
+                    selectSound.Play();
+
 
                     options[0].SetActive(false);
                     selectedIcon.SetActive(false);
@@ -245,7 +267,25 @@ public class KrisMenu : MonoBehaviour
                     krisAnim.state = 2;
                     yield return new WaitForSeconds(0.4f);
                     Instantiate(slash, enemy.transform.position, Quaternion.identity); //Throw the slash onto the enemy
+                    StartCoroutine(enemy.takeDamage());
                     enemy.health -= 8; //Damage the enemy
+
+                    if(enemy.health <= 0)
+                    {
+                        //End the game
+                        StartCoroutine(playDelayedSound(.05f, attackSound));
+                        StartCoroutine(playDelayedSound(.25f, damageEnemySound));
+                        yield return new WaitForSeconds(0.4f);
+                        StartCoroutine(enemy.fadeAway());
+                        displayText("You defeated sans.", false);
+                        musicPlayer.Stop();
+                        yield return new WaitForSeconds(2);
+                        krisAnim.state = 8;
+                        yield return new WaitForSeconds(6);
+                        SceneManager.LoadScene("Main Menu");
+                    }
+                    //else
+                    menuOptionsActive = false;
                     BattleBox.I.updateBoxState(1);
                     krisAnim.state = 1;
                     StartCoroutine(playDelayedSound(.05f, attackSound));
@@ -257,17 +297,114 @@ public class KrisMenu : MonoBehaviour
                 //return to menu
                 keepGoing = false;
                 menuOptionsActive = false;
-                enemyHealth.gameObject.SetActive(false);
-                mercy.gameObject.SetActive(false);
                 options[0].SetActive(false);
                 selectedIcon.SetActive(false);
-                selectSound.Play();
 
                 displayPreviousText();
             }
             yield return null;
         }
     }
+
+    //When you press the mercy button
+    private IEnumerator spareMenu()
+    {
+        //Initialize menu options
+        totalMenuOptions = 1;
+        menuOption = 0;
+        menuOptionsActive = true;
+
+        boxText.text = "";
+        options[0].SetActive(true);
+        selectedIcon.SetActive(true);
+        if(enemy.mercy >= 100) { options[0].GetComponent<TextMeshProUGUI>().color = Color.yellow; }
+        enemyHealth.updateProgress((int)((float)enemy.health / enemy.maxHealth * 100));
+        mercy.updateProgress(enemy.mercy);
+        changeBoxMenuSelected();
+
+        bool keepGoing = true;
+        yield return new WaitForSeconds(0.1f);
+        while (keepGoing)
+        {
+            if(Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Return))
+            {
+                keepGoing = false;
+                selectSound.Play();
+                options[0].SetActive(false);
+                selectedIcon.SetActive(false);
+                krisAnim.state = 3;
+
+                if(enemy.mercy >= 100)
+                {
+                    //Spare
+                    musicPlayer.Stop();
+                    StartCoroutine(enemy.spared());
+                    displayText("Sans was spared.", false);
+                    //Sound
+                    yield return new WaitForSeconds(2);
+                    krisAnim.state = 8;
+                    yield return new WaitForSeconds(6);
+                    SceneManager.LoadScene("Main Menu");
+                }
+                else
+                {
+                    menuOptionsActive = false;
+                    displayText("You attempt to spare Sans, but their name wasn't yellow...", true);
+                }
+                yield return new WaitForSeconds(0.4f);
+                krisAnim.state = 1;
+            }
+            else if (Input.GetKeyDown(KeyCode.X) || Input.GetKeyDown(KeyCode.Backspace))
+            {
+                //Return to the menu
+                keepGoing = false;
+                menuOptionsActive = false;
+                displayPreviousText();
+                options[0].SetActive(false);
+                selectedIcon.SetActive(false);
+            }
+            yield return null;
+        }
+    }
+
+    private IEnumerator actMenu()
+    {
+        //Initialize menu options
+        totalMenuOptions = 4;
+        menuOption = 0;
+        menuOptionsActive = true;
+
+        boxText.text = "";
+        for (int i = 1; i <= 4; i++)
+        {
+            options[i].SetActive(true);
+            options[i].GetComponent<TextMeshProUGUI>().text = actOptionNames[i - 1];
+            yield return null;
+        }
+        selectedIcon.SetActive(true);
+        changeBoxMenuSelected();
+        actDescriptionText.SetActive(true);
+
+        bool keepGoing = true;
+        while (keepGoing)
+        {
+            if(Input.GetKeyDown(KeyCode.X) || Input.GetKeyDown(KeyCode.Backspace))
+            {
+                menuOptionsActive = false;
+                actDescriptionText.SetActive(false);
+                for (int i = 1; i <= 4; i++)
+                {
+                    options[i].SetActive(false);
+                }
+                selectedIcon.SetActive(false);
+                displayPreviousText();
+                keepGoing = false;
+            }
+            yield return null;
+        }
+       
+    }
+
     //for playing sounds such as the damage sound after a certain amount of time
     private IEnumerator playDelayedSound(float waitTime, AudioSource sound)
     {

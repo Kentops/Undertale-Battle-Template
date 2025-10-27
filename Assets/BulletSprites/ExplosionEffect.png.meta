@@ -195,6 +195,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -959,7 +972,41 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ExplosionEffect_0: -363799875626529396
+      ExplosionEffect_1: -2833507368095169754
+      ExplosionEffect_10: 2872520261794624917
+      ExplosionEffect_11: -1820495273860896211
+      ExplosionEffect_12: 3248336740903868799
+      ExplosionEffect_13: 6089920831818492658
+      ExplosionEffect_14: 2177821998703771005
+      ExplosionEffect_15: 5624442104598098513
+      ExplosionEffect_16: -7319410166688328605
+      ExplosionEffect_17: -6491437266595510222
+      ExplosionEffect_18: 6271383638483120631
+      ExplosionEffect_19: -8101377182938229198
+      ExplosionEffect_2: 7568888728447893981
+      ExplosionEffect_20: 5427808851342562305
+      ExplosionEffect_21: -7410008530881745252
+      ExplosionEffect_22: 2748490144593102490
+      ExplosionEffect_23: -8091120571739181331
+      ExplosionEffect_24: 3507396550263006365
+      ExplosionEffect_25: 5909331070254011658
+      ExplosionEffect_26: -3885524941307695517
+      ExplosionEffect_27: -2259032335601757675
+      ExplosionEffect_28: -3543370965234879766
+      ExplosionEffect_29: 4704608267811949422
+      ExplosionEffect_3: -1196115934758392560
+      ExplosionEffect_30: -8887431564717706643
+      ExplosionEffect_31: 3905751225613554828
+      ExplosionEffect_32: -7352283379004213836
+      ExplosionEffect_33: 4834694417912449491
+      ExplosionEffect_4: -7732289732564098375
+      ExplosionEffect_5: -6720818820341972073
+      ExplosionEffect_6: -6620803976250970612
+      ExplosionEffect_7: -5739733295269645494
+      ExplosionEffect_8: -6765383481432965416
+      ExplosionEffect_9: -6538548189287069686
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

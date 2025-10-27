@@ -180,6 +180,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -834,7 +847,36 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      FireballEffect_0: 762280844834975313
+      FireballEffect_1: 3477946567380144344
+      FireballEffect_10: -7658314277502339903
+      FireballEffect_11: 8593410787561759360
+      FireballEffect_12: 206047715976334045
+      FireballEffect_13: -6793898950819148582
+      FireballEffect_14: -3782119298319042153
+      FireballEffect_15: 4131939133226442330
+      FireballEffect_16: -136642116154653723
+      FireballEffect_17: 3342725961828636301
+      FireballEffect_18: -4313166481569171062
+      FireballEffect_19: -4858313945811058308
+      FireballEffect_2: 3545681203216100269
+      FireballEffect_20: -4913521564491555469
+      FireballEffect_21: -6261700629672179575
+      FireballEffect_22: -4644208952078052604
+      FireballEffect_23: -5388213943633612621
+      FireballEffect_24: 5072142144907308137
+      FireballEffect_25: 7484319529470221307
+      FireballEffect_26: 4684364587996529459
+      FireballEffect_27: 2853948346707822481
+      FireballEffect_28: -513260600758294737
+      FireballEffect_3: -6845819421413733019
+      FireballEffect_4: -748230925985540480
+      FireballEffect_5: 4722004552116482977
+      FireballEffect_6: -9018210350861028458
+      FireballEffect_7: 3303469681184928383
+      FireballEffect_8: -6638862548748175394
+      FireballEffect_9: 1187517264020338255
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
