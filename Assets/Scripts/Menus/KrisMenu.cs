@@ -221,7 +221,7 @@ public class KrisMenu : MonoBehaviour
     [SerializeField] private FillBar mercy;
     [SerializeField] private GameObject slash;
     [SerializeField] private string[] actOptionNames;
-    [SerializeField] private GameObject actDescriptionText;
+    [SerializeField] private TextMeshProUGUI actDescriptionText;
     [SerializeField] private string[] actDescritons;
 
 
@@ -341,7 +341,7 @@ public class KrisMenu : MonoBehaviour
                     StartCoroutine(enemy.spared());
                     displayText("Sans was spared.", false);
                     //Sound
-                    yield return new WaitForSeconds(2);
+                    yield return new WaitForSeconds(0.1f);
                     krisAnim.state = 8;
                     yield return new WaitForSeconds(6);
                     SceneManager.LoadScene("Main Menu");
@@ -381,17 +381,72 @@ public class KrisMenu : MonoBehaviour
             options[i].GetComponent<TextMeshProUGUI>().text = actOptionNames[i - 1];
             yield return null;
         }
+        actDescriptionText.text = actDescritons[0];
         selectedIcon.SetActive(true);
         changeBoxMenuSelected();
-        actDescriptionText.SetActive(true);
-
+        yield return new WaitForSeconds(0.2f);
         bool keepGoing = true;
+
         while (keepGoing)
         {
+            if(Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.Return))
+            {
+                if(menuOption == 0) //Check
+                {
+                    displayText("Sans. 0 Atk 0 Def. The easiest enemy in the game.",true);
+                }
+                else if(menuOption == 1) //flirt
+                {
+                    int temp = Random.Range(0, 2);
+                    enemy.mercy += 8;
+                    if (temp == 0)
+                    {
+                        displayText("You compliment Sans's hair. He looks confused.", true);
+                    }
+                    else
+                    {
+                        displayText("You compliment Sans's slippers. If he had skin he would be blushing.", true);
+                    }
+                }
+                else if(menuOption == 2)
+                {
+                    KrisHealth.I.health += 25;
+                    if(KrisHealth.I.health > 100) { KrisHealth.I.health = 100; }
+                    changeState();
+                    updateHealth();
+                    yield return new WaitForSeconds(0.3f);
+                    BattleBox.I.updateBoxState(1);
+                }
+                else
+                {
+                    int temp = Random.Range(0, 2);
+                    if(temp == 0)
+                    {
+                        enemy.mercy += 2;
+                        displayText("You yell at Sans. He can't hear you over the music.", true);
+                    }
+                    else
+                    {
+                        enemy.mercy += 13;
+                        displayText("You yell at sans. Despite having no ears, it seems too loud for him.", true);
+                    }
+                }
+                if (enemy.mercy > 100) { enemy.mercy = 100; }
+                krisAnim.state = 3;
+                selectSound.Play();
+                menuOptionsActive = false;
+                selectedIcon.SetActive(false);
+                for (int i = 1; i <= 4; i++)
+                {
+                    options[i].SetActive(false);
+                }
+                keepGoing = false;
+                yield return new WaitForSeconds(0.1f);
+                krisAnim.state = 1;
+            }
             if(Input.GetKeyDown(KeyCode.X) || Input.GetKeyDown(KeyCode.Backspace))
             {
                 menuOptionsActive = false;
-                actDescriptionText.SetActive(false);
                 for (int i = 1; i <= 4; i++)
                 {
                     options[i].SetActive(false);
@@ -400,6 +455,9 @@ public class KrisMenu : MonoBehaviour
                 displayPreviousText();
                 keepGoing = false;
             }
+
+            //Update description text
+            actDescriptionText.text = actDescritons[menuOption];
             yield return null;
         }
        
