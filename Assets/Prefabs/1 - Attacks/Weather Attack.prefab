@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3960606707545801814
+--- !u!1 &2584427678540719749
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,49 +8,43 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5803707974413166145}
-  - component: {fileID: 4519264419410560594}
+  - component: {fileID: 6939924135180380424}
+  - component: {fileID: 412591032329986991}
   m_Layer: 0
-  m_Name: TornadosBottomOfScreen Wave
+  m_Name: Weather Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5803707974413166145
+--- !u!4 &6939924135180380424
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3960606707545801814}
+  m_GameObject: {fileID: 2584427678540719749}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -21.550547, y: -0.13361543, z: -0.20573714}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4519264419410560594
+--- !u!114 &412591032329986991
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3960606707545801814}
+  m_GameObject: {fileID: 2584427678540719749}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe32c765b3f9d5a4c836a2cf65dd1142, type: 3}
+  m_Script: {fileID: 11500000, guid: af5ac647dc034484a945ea6d74172dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeWaitedBeforeBulletSpawns:
-  - 0
-  - 0
-  bullets:
-  - {fileID: 7438625139410476580, guid: b3fca3109bc50b24fab1aa41adb03f16, type: 3}
-  - {fileID: 3734639630413628856, guid: 976f14caff500084c8baf4c1841e2d6f, type: 3}
-  bulletSpawnLocations:
-  - {x: -21.49, y: -0.42, z: -1.61}
-  - {x: -24.47, y: -0.42, z: -1.61}
-  timeAfterLastBullet: 0.5
+  waves:
+  - {fileID: 3960606707545801814, guid: 6995ba6100201b847be0e7c8508ed17d, type: 3}
+  - {fileID: 5075458349430241450, guid: 2326e2de9b1a90643b0c5a86b791f03a, type: 3}
+  - {fileID: 5075458349430241450, guid: 2326e2de9b1a90643b0c5a86b791f03a, type: 3}

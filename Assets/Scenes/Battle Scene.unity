@@ -4601,13 +4601,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Attacks:
-  - {fileID: 2584427678540719749, guid: 3b9cc6b0cc29c814994b447b1cc8c1e6, type: 3}
   - {fileID: 7997485524859598547, guid: 9a2b6a8675286fe4facd1fc9d402dc3e, type: 3}
   - {fileID: 7997485524859598547, guid: b12d14e23e95dcc468cf820eb684179d, type: 3}
   - {fileID: 7997485524859598547, guid: 8ef528b73f0e9f74ea8708458fdd2b21, type: 3}
   - {fileID: 7997485524859598547, guid: 41c91c8ee809b7c46ba824abeb9d1f3f, type: 3}
   - {fileID: 7997485524859598547, guid: bfd642a9d61adec44b317e02ff497bbd, type: 3}
-  - {fileID: 7997485524859598547, guid: b12d14e23e95dcc468cf820eb684179d, type: 3}
+  - {fileID: 2584427678540719749, guid: 3b9cc6b0cc29c814994b447b1cc8c1e6, type: 3}
   - {fileID: 7997485524859598547, guid: 8ef528b73f0e9f74ea8708458fdd2b21, type: 3}
   - {fileID: 7997485524859598547, guid: 6c34596d4de10df4b91440e4bb736f97, type: 3}
   nextAttack: 0
@@ -5549,63 +5548,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bar: {fileID: 1520747791}
   percentText: {fileID: 1757450612}
---- !u!1001 &279122563126576590
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1839231767358029767, guid: 703969b9456b21548971b367c82d6b2c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -26.02
-      objectReference: {fileID: 0}
-    - target: {fileID: 1839231767358029767, guid: 703969b9456b21548971b367c82d6b2c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.54
-      objectReference: {fileID: 0}
-    - target: {fileID: 1839231767358029767, guid: 703969b9456b21548971b367c82d6b2c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.33
-      objectReference: {fileID: 0}
-    - target: {fileID: 1839231767358029767, guid: 703969b9456b21548971b367c82d6b2c, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1839231767358029767, guid: 703969b9456b21548971b367c82d6b2c, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1839231767358029767, guid: 703969b9456b21548971b367c82d6b2c, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1839231767358029767, guid: 703969b9456b21548971b367c82d6b2c, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1839231767358029767, guid: 703969b9456b21548971b367c82d6b2c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1839231767358029767, guid: 703969b9456b21548971b367c82d6b2c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1839231767358029767, guid: 703969b9456b21548971b367c82d6b2c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1992353841936656214, guid: 703969b9456b21548971b367c82d6b2c, type: 3}
-      propertyPath: m_Name
-      value: Fireball
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 703969b9456b21548971b367c82d6b2c, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -5617,4 +5559,3 @@ SceneRoots:
   - {fileID: 1179250716}
   - {fileID: 501681472}
   - {fileID: 1258622774}
-  - {fileID: 279122563126576590}
