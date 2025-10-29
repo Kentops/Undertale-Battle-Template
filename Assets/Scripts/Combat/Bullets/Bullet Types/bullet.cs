@@ -1,9 +1,12 @@
 using UnityEngine;
+using System.Collections;
 
 public class Bullet : MonoBehaviour
 {
     public int bulletDamage;
     public bool destoryOnContact; //Destroy bullet on contact with player
+    public bool hasDeathAnim;
+    public float bulletDeathAnimTime; // only matters if the bullet has a death animation
 
     [SerializeField] public float bulletLifespan;
     [SerializeField] public bool bulletHasLifespan;
@@ -29,7 +32,19 @@ public class Bullet : MonoBehaviour
 
     public virtual void EndBulletLife()
     {
-        Destroy(gameObject);
+        if (!hasDeathAnim)
+            Destroy(gameObject);
+        else 
+        {
+            gameObject.GetComponent<Collider2D>().enabled = false;
+            gameObject.GetComponent<Animator>().SetBool("Dead", true);
+            StartCoroutine(DelayBulletDeath(bulletDeathAnimTime));
+        }
     }
 
+    private IEnumerator DelayBulletDeath(float delayTime)
+    {
+        yield return new WaitForSeconds(delayTime);
+        Destroy(gameObject);
+    }
 }

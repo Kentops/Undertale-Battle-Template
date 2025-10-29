@@ -30,6 +30,8 @@ public class SoulHider : MonoBehaviour
     private void onClose()
     {
         theSoul.SetActive(false);
+        GameObject[] gos = GameObject.FindGameObjectsWithTag("Bullet");
+        foreach(GameObject go in gos) go.GetComponent<Bullet>().EndBulletLife();
     }
 
     private void OnDestroy()

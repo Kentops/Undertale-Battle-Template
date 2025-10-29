@@ -1,0 +1,447 @@
+fileFormatVersion: 2
+guid: 8f8c9beef2495ee4b9cbb82183fa6a1e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 762280844834975313
+    second: FireballEffect_0
+  - first:
+      213: 3477946567380144344
+    second: FireballEffect_1
+  - first:
+      213: 3545681203216100269
+    second: FireballEffect_2
+  - first:
+      213: -6845819421413733019
+    second: FireballEffect_3
+  - first:
+      213: -748230925985540480
+    second: FireballEffect_4
+  - first:
+      213: 4722004552116482977
+    second: FireballEffect_5
+  - first:
+      213: -9018210350861028458
+    second: FireballEffect_6
+  - first:
+      213: 3303469681184928383
+    second: FireballEffect_7
+  - first:
+      213: -6638862548748175394
+    second: FireballEffect_8
+  - first:
+      213: 1187517264020338255
+    second: FireballEffect_9
+  - first:
+      213: -7658314277502339903
+    second: FireballEffect_10
+  - first:
+      213: 8593410787561759360
+    second: FireballEffect_11
+  - first:
+      213: 206047715976334045
+    second: FireballEffect_12
+  - first:
+      213: -6793898950819148582
+    second: FireballEffect_13
+  - first:
+      213: -3782119298319042153
+    second: FireballEffect_14
+  - first:
+      213: 4131939133226442330
+    second: FireballEffect_15
+  - first:
+      213: -136642116154653723
+    second: FireballEffect_16
+  - first:
+      213: 3342725961828636301
+    second: FireballEffect_17
+  - first:
+      213: -4313166481569171062
+    second: FireballEffect_18
+  - first:
+      213: -4858313945811058308
+    second: FireballEffect_19
+  - first:
+      213: -4913521564491555469
+    second: FireballEffect_20
+  - first:
+      213: -6261700629672179575
+    second: FireballEffect_21
+  - first:
+      213: -4644208952078052604
+    second: FireballEffect_22
+  - first:
+      213: -5388213943633612621
+    second: FireballEffect_23
+  - first:
+      213: 5072142144907308137
+    second: FireballEffect_24
+  - first:
+      213: 7484319529470221307
+    second: FireballEffect_25
+  - first:
+      213: 4684364587996529459
+    second: FireballEffect_26
+  - first:
+      213: 2853948346707822481
+    second: FireballEffect_27
+  - first:
+      213: -513260600758294737
+    second: FireballEffect_28
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: FireballEffect_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 582
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15e297fb36a249a00800000000000000
+      internalID: 762280844834975313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireballEffect_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 518
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d09b70e9f5244030800000000000000
+      internalID: 3477946567380144344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireballEffect_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 454
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: daba97cb44ac43130800000000000000
+      internalID: 3545681203216100269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireballEffect_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 390
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56d0a26c183cef0a0800000000000000
+      internalID: -6845819421413733019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireballEffect_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 326
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0869ba6efefbd95f0800000000000000
+      internalID: -748230925985540480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireballEffect_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 262
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a33ea43f1ee78140800000000000000
+      internalID: 4722004552116482977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireballEffect_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 198
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6937d276771e8d280800000000000000
+      internalID: -9018210350861028458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireballEffect_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 134
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f72fc492c2848dd20800000000000000
+      internalID: 3303469681184928383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireballEffect_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 70
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed77835afa50ed3a0800000000000000
+      internalID: -6638862548748175394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireballEffect_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f46739ee8a8ea7010800000000000000
+      internalID: 1187517264020338255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 2fd4c3248db2af84aa470a0f90bbc291
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      FireballEffect_0: 762280844834975313
+      FireballEffect_1: 3477946567380144344
+      FireballEffect_2: 3545681203216100269
+      FireballEffect_3: -6845819421413733019
+      FireballEffect_4: -748230925985540480
+      FireballEffect_5: 4722004552116482977
+      FireballEffect_6: -9018210350861028458
+      FireballEffect_7: 3303469681184928383
+      FireballEffect_8: -6638862548748175394
+      FireballEffect_9: 1187517264020338255
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
