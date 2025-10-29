@@ -321,7 +321,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -1247,7 +1247,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -2283,7 +2283,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9057235108890982005, guid: aebf1732be028f54c80c0b1c65be1d7c, type: 3}
+  m_Sprite: {fileID: -1044184858084890350, guid: 1f127e443358aef4b8eedea1a894bc46, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4300,7 +4300,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -4689,7 +4689,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Attacks:
   - {fileID: 7997485524859598547, guid: 9a2b6a8675286fe4facd1fc9d402dc3e, type: 3}
+  - {fileID: 7997485524859598547, guid: b12d14e23e95dcc468cf820eb684179d, type: 3}
+  - {fileID: 7997485524859598547, guid: 8ef528b73f0e9f74ea8708458fdd2b21, type: 3}
+  - {fileID: 7997485524859598547, guid: 41c91c8ee809b7c46ba824abeb9d1f3f, type: 3}
   - {fileID: 7997485524859598547, guid: bfd642a9d61adec44b317e02ff497bbd, type: 3}
+  - {fileID: 7997485524859598547, guid: b12d14e23e95dcc468cf820eb684179d, type: 3}
+  - {fileID: 7997485524859598547, guid: 8ef528b73f0e9f74ea8708458fdd2b21, type: 3}
+  - {fileID: 7997485524859598547, guid: 6c34596d4de10df4b91440e4bb736f97, type: 3}
   nextAttack: 0
 --- !u!1 &1798075046
 GameObject:
@@ -5504,7 +5510,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0

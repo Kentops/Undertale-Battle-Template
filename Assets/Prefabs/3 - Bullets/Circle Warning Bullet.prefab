@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7177057383162256139}
   - component: {fileID: 6332069362717047799}
-  - component: {fileID: 6241151811782496986}
+  - component: {fileID: 2110966020223778384}
   - component: {fileID: 8066520794147321949}
   m_Layer: 0
-  m_Name: CircleBullet
+  m_Name: Circle Warning Bullet
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -89,7 +89,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6241151811782496986
+--- !u!114 &2110966020223778384
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -98,13 +98,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 7995796594343809552}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f502e6dbe2d73dd42b0b0c79586fa3c6, type: 3}
+  m_Script: {fileID: 11500000, guid: dc6fe9009b499534a900e4538297ea4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bulletDamage: 5
   destoryOnContact: 0
-  bulletLifespan: 3
+  bulletLifespan: 4
   bulletHasLifespan: 1
+  appearSpeed: 1
 --- !u!58 &8066520794147321949
 CircleCollider2D:
   m_ObjectHideFlags: 0

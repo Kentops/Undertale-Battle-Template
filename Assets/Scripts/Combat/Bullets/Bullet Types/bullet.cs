@@ -5,8 +5,8 @@ public class Bullet : MonoBehaviour
     public int bulletDamage;
     public bool destoryOnContact; //Destroy bullet on contact with player
 
-    [SerializeField] private float bulletLifespan;
-    [SerializeField] private bool bulletHasLifespan;
+    [SerializeField] public float bulletLifespan;
+    [SerializeField] public bool bulletHasLifespan;
     
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -27,7 +27,7 @@ public class Bullet : MonoBehaviour
 
     }
 
-    public void EndBulletLife()
+    public virtual void EndBulletLife()
     {
         Destroy(gameObject);
     }

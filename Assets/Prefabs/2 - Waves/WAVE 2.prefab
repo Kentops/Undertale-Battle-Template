@@ -49,9 +49,9 @@ MonoBehaviour:
   - 0.1
   - 0.2
   bullets:
-  - {fileID: 7995796594343809552, guid: b6fca38702ecbca4e868b1c4ee2e724d, type: 3}
-  - {fileID: 7995796594343809552, guid: b6fca38702ecbca4e868b1c4ee2e724d, type: 3}
-  - {fileID: 7995796594343809552, guid: b6fca38702ecbca4e868b1c4ee2e724d, type: 3}
+  - {fileID: 7995796594343809552, guid: 9d49b5df40c4b684d8c7581c92ea0586, type: 3}
+  - {fileID: 7995796594343809552, guid: 9d49b5df40c4b684d8c7581c92ea0586, type: 3}
+  - {fileID: 7995796594343809552, guid: 9d49b5df40c4b684d8c7581c92ea0586, type: 3}
   bulletSpawnLocations:
   - {x: -24.2, y: -1.1506572, z: -0.1}
   - {x: -23.789734, y: 0.85, z: -0.1}

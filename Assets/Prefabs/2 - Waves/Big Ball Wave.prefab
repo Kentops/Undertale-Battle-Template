@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5617280868925377391}
   - component: {fileID: 8071057595896876957}
   m_Layer: 0
-  m_Name: WAVE 1
+  m_Name: Big Ball Wave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,14 +46,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeWaitedBeforeBulletSpawns:
   - 0.2
-  - 0.2
-  - 0.2
+  - 0.6
+  - 0.6
+  - 0.6
+  - 0.6
   bullets:
-  - {fileID: 7995796594343809552, guid: 9d49b5df40c4b684d8c7581c92ea0586, type: 3}
-  - {fileID: 7995796594343809552, guid: 9d49b5df40c4b684d8c7581c92ea0586, type: 3}
-  - {fileID: 7995796594343809552, guid: 9d49b5df40c4b684d8c7581c92ea0586, type: 3}
+  - {fileID: 7995796594343809552, guid: 2a373b687f07b3947b47f9c1f18fd3b9, type: 3}
+  - {fileID: 7995796594343809552, guid: 2a373b687f07b3947b47f9c1f18fd3b9, type: 3}
+  - {fileID: 7995796594343809552, guid: 2a373b687f07b3947b47f9c1f18fd3b9, type: 3}
+  - {fileID: 7995796594343809552, guid: 2a373b687f07b3947b47f9c1f18fd3b9, type: 3}
+  - {fileID: 7995796594343809552, guid: 2a373b687f07b3947b47f9c1f18fd3b9, type: 3}
   bulletSpawnLocations:
-  - {x: -26.089605, y: -1.1506572, z: -0.1}
-  - {x: -23.789734, y: 1.7593853, z: -0.1}
-  - {x: -21.466394, y: -1.1975933, z: -0.1}
-  timeAfterLastBullet: 3
+  - {x: -21.92, y: 1.81, z: -0.1}
+  - {x: -24.12, y: 1.78, z: -0.1}
+  - {x: -21.99, y: -0.27, z: -0.1}
+  - {x: -24.1, y: -0.45, z: -0.1}
+  - {x: -22.94, y: 0.84, z: -0.1}
+  timeAfterLastBullet: 3.5

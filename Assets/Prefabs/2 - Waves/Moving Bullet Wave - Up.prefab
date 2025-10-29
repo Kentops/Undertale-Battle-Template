@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5617280868925377391}
   - component: {fileID: 8071057595896876957}
   m_Layer: 0
-  m_Name: WAVE 1
+  m_Name: Moving Bullet Wave - Up
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,15 +45,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeWaitedBeforeBulletSpawns:
-  - 0.2
-  - 0.2
-  - 0.2
+  - 0.4
+  - 0.4
+  - 0.4
+  - 0.4
+  - 0.4
+  - 0.4
+  - 0.4
   bullets:
-  - {fileID: 7995796594343809552, guid: 9d49b5df40c4b684d8c7581c92ea0586, type: 3}
-  - {fileID: 7995796594343809552, guid: 9d49b5df40c4b684d8c7581c92ea0586, type: 3}
-  - {fileID: 7995796594343809552, guid: 9d49b5df40c4b684d8c7581c92ea0586, type: 3}
+  - {fileID: 7995796594343809552, guid: 9c6c179294638404e89aad8f4c73d115, type: 3}
+  - {fileID: 7995796594343809552, guid: 9c6c179294638404e89aad8f4c73d115, type: 3}
+  - {fileID: 7995796594343809552, guid: 9c6c179294638404e89aad8f4c73d115, type: 3}
+  - {fileID: 7995796594343809552, guid: 9c6c179294638404e89aad8f4c73d115, type: 3}
+  - {fileID: 7995796594343809552, guid: 9c6c179294638404e89aad8f4c73d115, type: 3}
+  - {fileID: 7995796594343809552, guid: 9c6c179294638404e89aad8f4c73d115, type: 3}
+  - {fileID: 7995796594343809552, guid: 9c6c179294638404e89aad8f4c73d115, type: 3}
   bulletSpawnLocations:
-  - {x: -26.089605, y: -1.1506572, z: -0.1}
-  - {x: -23.789734, y: 1.7593853, z: -0.1}
-  - {x: -21.466394, y: -1.1975933, z: -0.1}
-  timeAfterLastBullet: 3
+  - {x: -27.47, y: 2.09, z: -0.1}
+  - {x: -26.96, y: -0.12, z: -0.1}
+  - {x: -25.86, y: -2.57, z: -0.1}
+  - {x: -22.75, y: -2.79, z: -0.1}
+  - {x: -19.56, y: -2.32, z: -0.1}
+  - {x: -18.93, y: 0.32, z: -0.1}
+  - {x: -18.93, y: 2.39, z: -0.1}
+  timeAfterLastBullet: 1.5

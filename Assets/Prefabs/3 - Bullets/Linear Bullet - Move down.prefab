@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7177057383162256139}
   - component: {fileID: 6332069362717047799}
-  - component: {fileID: 6241151811782496986}
+  - component: {fileID: 8331688650939687753}
   - component: {fileID: 8066520794147321949}
   m_Layer: 0
-  m_Name: CircleBullet
+  m_Name: Linear Bullet - Move down
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -21.665857, y: 1.7484596, z: -0.1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 32ae70dfad34e4a56a3f40eaf723f739, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -89,7 +89,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6241151811782496986
+--- !u!114 &8331688650939687753
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -98,13 +98,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 7995796594343809552}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f502e6dbe2d73dd42b0b0c79586fa3c6, type: 3}
+  m_Script: {fileID: 11500000, guid: b1101dee31fd0e94db55d5111018e6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bulletDamage: 5
-  destoryOnContact: 0
+  destoryOnContact: 1
   bulletLifespan: 3
-  bulletHasLifespan: 1
+  bulletHasLifespan: 0
+  B: {x: -22.96, y: -1.47, z: -0.1}
 --- !u!58 &8066520794147321949
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -139,5 +140,5 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
+  m_Offset: {x: -0.02018261, y: 0}
+  m_Radius: 0.26867962

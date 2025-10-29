@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5075458349430241450
+--- !u!1 &7997485524859598547
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5617280868925377391}
-  - component: {fileID: 8071057595896876957}
+  - component: {fileID: 2686381899726799093}
+  - component: {fileID: 6341320328325882816}
   m_Layer: 0
-  m_Name: WAVE 1
+  m_Name: Fade-in attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5617280868925377391
+--- !u!4 &2686381899726799093
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5075458349430241450}
+  m_GameObject: {fileID: 7997485524859598547}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -24.44872, y: 1.191551, z: 0.013877888}
@@ -32,28 +32,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8071057595896876957
+--- !u!114 &6341320328325882816
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5075458349430241450}
+  m_GameObject: {fileID: 7997485524859598547}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe32c765b3f9d5a4c836a2cf65dd1142, type: 3}
+  m_Script: {fileID: 11500000, guid: af5ac647dc034484a945ea6d74172dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeWaitedBeforeBulletSpawns:
-  - 0.2
-  - 0.2
-  - 0.2
-  bullets:
-  - {fileID: 7995796594343809552, guid: 9d49b5df40c4b684d8c7581c92ea0586, type: 3}
-  - {fileID: 7995796594343809552, guid: 9d49b5df40c4b684d8c7581c92ea0586, type: 3}
-  - {fileID: 7995796594343809552, guid: 9d49b5df40c4b684d8c7581c92ea0586, type: 3}
-  bulletSpawnLocations:
-  - {x: -26.089605, y: -1.1506572, z: -0.1}
-  - {x: -23.789734, y: 1.7593853, z: -0.1}
-  - {x: -21.466394, y: -1.1975933, z: -0.1}
-  timeAfterLastBullet: 3
+  waves:
+  - {fileID: 5075458349430241450, guid: 419259802f3405c4fbe74a5a5410f9b8, type: 3}
+  - {fileID: 5075458349430241450, guid: 692856fa5eea6a44485e512ac2d735d3, type: 3}

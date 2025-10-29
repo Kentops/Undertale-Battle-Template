@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5617280868925377391}
   - component: {fileID: 8071057595896876957}
   m_Layer: 0
-  m_Name: WAVE 1
+  m_Name: Snake Wave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,15 +45,45 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeWaitedBeforeBulletSpawns:
-  - 0.2
-  - 0.2
-  - 0.2
+  - 0.3
+  - 0.3
+  - 0.3
+  - 0.3
+  - 0.3
+  - 0.3
+  - 0.3
+  - 0.3
+  - 0.3
+  - 0.3
+  - 0.3
+  - 0.3
+  - 0.3
   bullets:
   - {fileID: 7995796594343809552, guid: 9d49b5df40c4b684d8c7581c92ea0586, type: 3}
   - {fileID: 7995796594343809552, guid: 9d49b5df40c4b684d8c7581c92ea0586, type: 3}
   - {fileID: 7995796594343809552, guid: 9d49b5df40c4b684d8c7581c92ea0586, type: 3}
+  - {fileID: 7995796594343809552, guid: 9d49b5df40c4b684d8c7581c92ea0586, type: 3}
+  - {fileID: 7995796594343809552, guid: 9d49b5df40c4b684d8c7581c92ea0586, type: 3}
+  - {fileID: 7995796594343809552, guid: 9d49b5df40c4b684d8c7581c92ea0586, type: 3}
+  - {fileID: 7995796594343809552, guid: 9d49b5df40c4b684d8c7581c92ea0586, type: 3}
+  - {fileID: 7995796594343809552, guid: 9d49b5df40c4b684d8c7581c92ea0586, type: 3}
+  - {fileID: 7995796594343809552, guid: 9d49b5df40c4b684d8c7581c92ea0586, type: 3}
+  - {fileID: 7995796594343809552, guid: 9d49b5df40c4b684d8c7581c92ea0586, type: 3}
+  - {fileID: 7995796594343809552, guid: 9d49b5df40c4b684d8c7581c92ea0586, type: 3}
+  - {fileID: 7995796594343809552, guid: 9d49b5df40c4b684d8c7581c92ea0586, type: 3}
+  - {fileID: 7995796594343809552, guid: 9d49b5df40c4b684d8c7581c92ea0586, type: 3}
   bulletSpawnLocations:
-  - {x: -26.089605, y: -1.1506572, z: -0.1}
-  - {x: -23.789734, y: 1.7593853, z: -0.1}
-  - {x: -21.466394, y: -1.1975933, z: -0.1}
-  timeAfterLastBullet: 3
+  - {x: -25.027105, y: 2.3737705, z: -0.1}
+  - {x: -24.284424, y: 2.1757226, z: -0.1}
+  - {x: -23.541744, y: 1.8951546, z: -0.1}
+  - {x: -22.964106, y: 1.4330426, z: -0.1}
+  - {x: -22.601017, y: 0.70686674, z: -0.1}
+  - {x: -22.799065, y: 0.030202761, z: -0.1}
+  - {x: -23.211664, y: -0.61345315, z: -0.1}
+  - {x: -24.119385, y: -0.53093314, z: -0.1}
+  - {x: -24.51548, y: 0.32727474, z: -0.1}
+  - {x: -23.739792, y: 0.7233707, z: -0.1}
+  - {x: -22.86508, y: 0.5418267, z: -0.1}
+  - {x: -22.089394, y: 0.063210756, z: -0.1}
+  - {x: -21.346712, y: -0.33288524, z: -0.1}
+  timeAfterLastBullet: 2

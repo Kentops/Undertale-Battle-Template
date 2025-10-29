@@ -26,7 +26,6 @@ public class BulletWave : MonoBehaviour
 
     public void StartSpawningBullets(Attack myAttack) 
     {
-        Debug.Log("Start Spawning Bullets Method");
         bulletIndex = 0;
         attackThisWaveBelongsTo = myAttack;
         StartCoroutine("bulletSpawner");
